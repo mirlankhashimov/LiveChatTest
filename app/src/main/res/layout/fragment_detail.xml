@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="32dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="48dp"
+                android:src="@drawable/ic_back" />
+
+            <FrameLayout
+                android:layout_width="280dp"
+                android:layout_height="280dp"
+                android:layout_gravity="center">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/avatar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    app:roundAsCircle="true" />
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:theme="@style/AppTheme.WhiteAccent" />
+            </FrameLayout>
+
+            <com.github.florent37.shapeofview.shapes.CircleView
+                android:layout_width="280dp"
+                android:layout_height="280dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+
+                app:shape_circle_borderColor="@android:color/black"
+                app:shape_circle_borderWidth="2dp">
+                <com.priyankvasa.android.cameraviewex.CameraView
+                    android:id="@+id/camera"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:keepScreenOn="true"
+                    app:aspectRatio="4:3"
+                    app:autoFocus="continuous_picture"
+                    app:awb="auto"
+                    app:cameraMode="single_capture"
+                    app:continuousFrameSize="W1440,1080"
+                    app:facing="front"
+                    app:flash="auto"
+                    app:jpegQuality="high"
+                    app:noiseReduction="high_quality"
+                    app:opticalStabilization="true"
+                    app:outputFormat="jpeg"
+                    app:pinchToZoom="true"
+                    app:shutter="short_time"
+                    app:singleCaptureSize="1920,H1080"
+                    app:touchToFocus="true"
+                    app:zsl="true" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/camera_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="64dp"
+                    android:layout_gravity="center"
+                    android:text="Turn on Camera"
+                    android:textAllCaps="true"
+                    android:textSize="18sp"
+                    app:cornerRadius="4dp"
+                    app:elevation="8dp" />
+
+            </com.github.florent37.shapeofview.shapes.CircleView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
